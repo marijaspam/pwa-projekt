@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Unos vijesti</title>
+</head>
+<body>
+    <header>
+        <h1>Lemonde</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="kategorija.php?id=sport">Sport</a></li>
+                <li><a href="kategorija.php?id=kultura">Kultura</a></li>
+                <li><a href="unos.html">Unos</a></li>
+                <li><a href="administracija.php">Administracija</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form enctype="multipart/form-data" action="skripta.php" method="POST">
+            <div class="form-item">
+                <span id="porukaTitle" class="bojaPoruke"></span>
+                <label for="title">Naslov vijesti</label>
+                <div class="form-field">
+                    <input type="text" name="title" id="title" class="form-field-textual">
+                </div>
+            </div>
+            <div class="form-item">
+                <span id="porukaAbout" class="bojaPoruke"></span>
+                <label for="about">Kratki sadržaj vijesti (do 50 znakova)</label>
+                <div class="form-field">
+                    <textarea name="about" id="about" cols="30" rows="10" class="form-field-textual"></textarea>
+                </div>
+            </div>
+            <div class="form-item">
+                <span id="porukaContent" class="bojaPoruke"></span>
+                <label for="content">Sadržaj vijesti</label>
+                <div class="form-field">
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-field-textual"></textarea>
+                </div>
+            </div>
+            <div class="form-item">
+                <span id="porukaSlika" class="bojaPoruke"></span>
+                <label for="pphoto">Slika: </label>
+                <div class="form-field">
+                    <input type="file" class="input-text" id="pphoto" name="pphoto"/>
+                </div>
+            </div>
+            <div class="form-item">
+                <span id="porukaKategorija" class="bojaPoruke"></span>
+                <label for="category">Kategorija vijesti</label>
+                <div class="form-field">
+                    <select name="category" id="category" class="form-field-textual">
+                        <option value="" disabled selected>Odabir kategorije</option>
+                        <option value="sport">Sport</option>
+                        <option value="kultura">Kultura</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item">
+                <label>Spremiti u arhivu:
+                    <div class="form-field">
+                        <input type="checkbox" name="archive" id="archive">
+                    </div>
+                </label>
+            </div>
+            <div class="form-item">
+                <button type="reset" value="Poništi">Poništi</button>
+                <button type="submit" value="Prihvati" id="slanje">Prihvati</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Lemonnde</p>
+    </footer>
+    <script src="validacija.js"></script>
+</body>
+</html>
